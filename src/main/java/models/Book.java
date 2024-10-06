@@ -24,4 +24,13 @@ public class Book {
     private Double price;
     private int stock;
 
+    public Book() {
+    }
+    public Book(String title, String author, Double price, int stock, String releaseDate) {
+        this.title = title;
+        this.author = author;
+        this.price = price;
+        this.stock = stock;
+        this.releaseDate = releaseDate;
+    }
 }
