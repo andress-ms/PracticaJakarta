@@ -1,10 +1,7 @@
 package models;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -15,7 +12,8 @@ import lombok.ToString;
 @ToString
 public class Book {
     @Id
-    @Column
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "book_seq")
+    @SequenceGenerator(name = "book_seq", sequenceName = "books_id_seq", allocationSize = 1)
     private Long id;
 
     private String title;
